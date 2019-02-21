@@ -1,0 +1,111 @@
+@tailwind preflight
+@tailwind components
+
+.bg-grad-sidebar
+    background-image: none
+    @apply bg-white
+    .sidebar-label, .dim
+        @apply text-90 select-none
+    .sidebar-icon
+        @apply hidden
+
+.content
+    @apply flex flex-col 
+    > .px-view.py-view
+        @apply flex flex-col justify-between flex-1 w-full border-50 border-l-2 border-t-2
+
+.h-header
+    @apply shadow-none
+    .dropdown
+        @apply static
+        .dropdown-menu
+            @apply mt-4
+    .dim
+        @apply hidden 
+        + .max-w-xs
+            max-width: none
+            @apply flex-1 w-auto 
+            .pl-search
+                @apply border-none
+            .max-h-search
+                @apply shadow rounded-none mt-2
+
+
+.text-2xl
+    @apply text-4xl text-center mb-12 font-bold text-90 flex items-center w-full
+    &:before, &:after
+        content: ''
+        height: 1px 
+        @apply flex-1 bg-black bg-90
+    &:before
+        @apply mr-8
+    &:after
+        @apply ml-8
+
+[dusk*="detail-component"]
+    > div
+        > .flex
+            @apply flex-wrap 
+
+.form-input, .btn-default
+    @apply outline-none shadow-none
+    &:focus
+        @apply outline-none shadow-none
+
+
+    
+.btn-default
+    text-shadow: none
+
+.table th
+    @apply bg-40 border-none
+
+.card
+    @apply border-50 border-2 shadow-none overflow-hidden
+    > div
+        &.border-50:first-child
+            @apply bg-50
+        &:last-child
+            > nav
+                @apply bg-50
+        
+.dropdown-trigger 
+    @apply bg-transparent border-none
+
+form 
+    div 
+        .flex
+            > [class*="w-"]
+                &:nth-child(2)
+                    @apply w-full
+                > label
+                    @apply font-bold
+
+@import './../../../../vendor/laravel/nova/resources/css/app.css'
+
+\:root
+    --transparent: transparent
+    --black: #22292f
+    --white: white
+    --white-50: rgba(255, 255, 255, .5)
+    --danger: #b71540
+    --success: #38ada9
+    --warning: #fad390
+    --info: #6a89cc
+    --primary: #82ccdd
+    --primary-dark: #60a3bc
+    --primary-70: rgba(64, 153, 222, .7)
+    --primary-50: rgba(64, 153, 222, .5)
+    --primary-30: rgba(64, 153, 222, .3)
+    --primary-10: rgba(64, 153, 222, .1)
+    --logo: #0a3d62
+    --sidebar-icon: #b3c1d1
+    #{'--20'}: #fcfcfc
+    #{'--30'}: #f9f9f9
+    #{'--40'}: #f7f7f7
+    #{'--50'}: #efefef
+    #{'--60'}: #bacad6
+    #{'--70'}: #b3b9bf
+    #{'--80'}: #7c858e
+    #{'--90'}: #0a3d62
+    #{'--90-half'}: rgba(40, 54, 61, .5)
