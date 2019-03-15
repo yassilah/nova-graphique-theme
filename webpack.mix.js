@@ -11,6 +11,11 @@ const tailwindcss = require('tailwindcss')
  | file for the application as well as bundling up all the JS files.
  |
  */
+class TailwindExtractor {
+    static extract(content) {
+        return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
+    }
+}
 
 mix
     .sass('resources/sass/theme.sass', 'resources/css/theme.css')
